@@ -37,7 +37,6 @@
 		</plugins>
 	</build>
 	<modules>
-		<module>order-service</module>
 		<module>food-order-service</module>
 	</modules>
 </project>

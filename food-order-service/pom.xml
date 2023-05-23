@@ -12,5 +12,6 @@
   	<module>food-order-application</module>
   	<module>food-order-data</module>
   	<module>food-order-messaging</module>
+  	<module>food-order-container</module>
   </modules>
 </project>

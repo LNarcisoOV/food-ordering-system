@@ -7,7 +7,6 @@
 	</parent>
 	<artifactId>food-order-domain-application-service</artifactId>
 
-
 	<dependencies>
 		<dependency>
 			<groupId>com.fos</groupId>

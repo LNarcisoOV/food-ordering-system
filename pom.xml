@@ -29,7 +29,7 @@
 			</dependency>
 			<dependency>
 				<groupId>com.fos</groupId>
-				<artifactId>food-order-application-service</artifactId>
+				<artifactId>food-order-domain-application-service</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
@@ -40,6 +40,11 @@
 			<dependency>
 				<groupId>com.fos</groupId>
 				<artifactId>food-order-data</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fos</groupId>
+				<artifactId>food-order-messaging</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 		</dependencies>

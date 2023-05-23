@@ -21,7 +21,28 @@
 	</properties>
 
 	<dependencyManagement>
-		<dependencies></dependencies>
+		<dependencies>
+			<dependency>
+				<groupId>com.fos</groupId>
+				<artifactId>food-order-domain-core</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fos</groupId>
+				<artifactId>food-order-application-service</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fos</groupId>
+				<artifactId>food-order-application</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fos</groupId>
+				<artifactId>food-order-data</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+		</dependencies>
 	</dependencyManagement>
 
 	<build>
@@ -29,7 +50,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${maven.compiler.plugin-version}</version><!--$NO-MVN-MAN-VER$-->
+				<version>${maven.compiler.plugin-version}</version> <!--$NO-MVN-MAN-VER$-->
 				<configuration>
 					<release>17</release>
 				</configuration>

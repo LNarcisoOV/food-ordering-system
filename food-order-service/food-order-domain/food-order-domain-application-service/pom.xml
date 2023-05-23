@@ -2,13 +2,8 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.fos</groupId>
-    <artifactId>food-order-service</artifactId>
+    <artifactId>food-order-domain</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>food-order-domain</artifactId>
-  <packaging>pom</packaging>
-  <modules>
-  	<module>food-order-domain-core</module>
-  	<module>food-order-domain-application-service</module>
-  </modules>
+  <artifactId>food-order-domain-application-service</artifactId>
 </project>

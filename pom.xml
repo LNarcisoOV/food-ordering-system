@@ -64,5 +64,6 @@
 	</build>
 	<modules>
 		<module>food-order-service</module>
+		<module>food-order-common</module>
 	</modules>
 </project>

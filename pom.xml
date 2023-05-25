@@ -47,6 +47,11 @@
 				<artifactId>food-order-messaging</artifactId>
 				<version>${project.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>com.fos</groupId>
+				<artifactId>food-order-common-domain</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 

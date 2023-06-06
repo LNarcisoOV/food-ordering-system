@@ -33,6 +33,14 @@ public class Order extends AggregateRoot<OrderId> {
 		orderStatus = OrderStatus.PENDING;
 		initializeItems();
 	}
+	
+	private void initializeItems() {
+        long itemId = 1;
+        for (OrderItem item : items) {
+            item.initilize(super.getId(), new OrderItemId(itemId++));
+        }
+
+    }
 
 	public void validate() {
 		validateInitialOrder();
@@ -73,14 +81,16 @@ public class Order extends AggregateRoot<OrderId> {
                     + orderItem.getProduct().getId().getValue() + "!");
 	    }
 	}
-
-	private void initializeItems() {
-		long itemId = 1;
-		for (OrderItem item : items) {
-			item.initilize(super.getId(), new OrderItemId(itemId++));
-		}
-
+	
+	public void pay() {
+	    if(!OrderStatus.PENDING.equals(orderStatus)) {
+	        throw new OrderDomainException("ORDER IS NOT IN CORRECT STATE FOR PAY OPERATION.");
+	    }
+	    
+	    orderStatus = OrderStatus.PAID;
 	}
+
+	
 
 	private Order(Builder builder) {
 		super.setId(builder.orderId);

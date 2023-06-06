@@ -4,7 +4,7 @@ import com.fos.common.domain.valueobject.BaseId;
 
 public class OrderItemId extends BaseId<Long> {
 
-	private OrderItemId(Long value) {
+	public OrderItemId(Long value) {
 		super(value);
 	}
 

@@ -6,7 +6,7 @@ import com.fos.common.domain.valueobject.BaseId;
 
 public class TrackingId extends BaseId<UUID>{
 
-	private TrackingId(UUID value) {
+	public TrackingId(UUID value) {
 		super(value);
 	}
 

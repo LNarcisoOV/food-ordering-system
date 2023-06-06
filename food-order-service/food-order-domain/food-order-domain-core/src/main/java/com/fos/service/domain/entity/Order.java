@@ -1,5 +1,6 @@
 package com.fos.service.domain.entity;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
@@ -54,10 +55,11 @@ public class Order extends AggregateRoot<OrderId> {
 	}
 
 	private void validateItemsPrice() {
-		Money orderItemsTotal = items.stream().map(oi -> {
-			validateItemPrice(oi);
-			return oi.getSubTotal();
-		}).reduce(Money.ZERO, Money::add);
+	    Money orderItemsTotal = items.stream().map(orderItem -> {
+	        validateItemPrice(orderItem);
+	        return orderItem.getSubtotal();
+	    }).reduce(Money.ZERO, Money::add);
+	    
 
 		if (!price.equals(orderItemsTotal)) {
 			throw new OrderDomainException("TOTAL PRICE: " + price.getAmount() + " IS NOT EQUAL TO ORDER ITEMS TOTAL: "

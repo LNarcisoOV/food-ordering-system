@@ -90,7 +90,13 @@ public class Order extends AggregateRoot<OrderId> {
 	    orderStatus = OrderStatus.PAID;
 	}
 
-	
+	public void approve() {
+        if(!OrderStatus.PAID.equals(orderStatus)) {
+            throw new OrderDomainException("ORDER IS NOT IN CORRECT STATE FOR APPROVE OPERATION.");
+        }
+        
+        orderStatus = OrderStatus.APPROVED;
+    }
 
 	private Order(Builder builder) {
 		super.setId(builder.orderId);

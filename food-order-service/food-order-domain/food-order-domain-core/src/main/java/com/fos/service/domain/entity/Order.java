@@ -97,6 +97,22 @@ public class Order extends AggregateRoot<OrderId> {
         
         orderStatus = OrderStatus.APPROVED;
     }
+	
+	public void initCancel() {
+        if(!OrderStatus.PAID.equals(orderStatus)) {
+            throw new OrderDomainException("ORDER IS NOT IN CORRECT STATE FOR CANCELLING OPERATION.");
+        }
+        
+        orderStatus = OrderStatus.CANCELLING;
+    }
+	
+	public void cancel() {
+        if(!(OrderStatus.PENDING.equals(orderStatus) || OrderStatus.CANCELLING.equals(orderStatus))) {
+            throw new OrderDomainException("ORDER IS NOT IN CORRECT STATE FOR CANCEL OPERATION.");
+        }
+        
+        orderStatus = OrderStatus.CANCELLED;
+    }
 
 	private Order(Builder builder) {
 		super.setId(builder.orderId);
